@@ -1,7 +1,7 @@
+import InputGroup from "./components/InputGroup";
+
 function App() {
-  return (
-    <h1>React Investment Calculator</h1>
-  )
+  return <InputGroup />;
 }
 
-export default App
+export default App;
