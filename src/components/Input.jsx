@@ -7,8 +7,11 @@ export default function Input({
 }) {
   const [currentValue, setCurrentValue] = useState(inputValue);
   function inputChangeHandler(event) {
-    setCurrentValue(event.target.value);
-    inputStateHandler(inputType, event.target.value);
+    var currentValue = isNaN(parseFloat(event.target.value))
+      ? 0
+      : parseFloat(event.target.value);
+    setCurrentValue(currentValue);
+    inputStateHandler(inputType, currentValue);
   }
   return (
     <span id="user-input">

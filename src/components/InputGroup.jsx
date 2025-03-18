@@ -2,7 +2,7 @@ import appImg from "./../assets/investment-calculator-logo.png";
 import Input from "./Input.jsx";
 import { useState } from "react";
 
-export default function InputGroup() {
+export default function InputGroup({ setResult }) {
   const [inputState, setInputState] = useState([
     { inputType: "initial", value: 15000, inputLabel: "Initial Investment" },
     { inputType: "annual", value: 900, inputLabel: "Annual Investment" },
@@ -42,7 +42,7 @@ export default function InputGroup() {
           );
         })}
       </div>
-      <button>Calculate</button>
+      <button onClick={() => setResult(inputState)}>Calculate</button>
     </div>
   );
 }
