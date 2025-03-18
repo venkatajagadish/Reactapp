@@ -1,8 +1,14 @@
 import { useState } from "react";
-export default function Input({ children, inputValue, inputType }) {
+export default function Input({
+  children,
+  inputValue,
+  inputType,
+  inputStateHandler,
+}) {
   const [currentValue, setCurrentValue] = useState(inputValue);
   function inputChangeHandler(event) {
     setCurrentValue(event.target.value);
+    inputStateHandler(inputType, event.target.value);
   }
   return (
     <span id="user-input">
